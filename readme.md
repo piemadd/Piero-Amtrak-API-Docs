@@ -1,0 +1,3 @@
+# Piero Amtrak API
+
+This API makes it super easy to programmatically interact with Amtrak's train tracking libray from any language supporting CURL requests and JSON. The library is written in Javascript using Express.js and [Amtrak.js](https://npmjs.com/package/amtrak), the latter of which is my own library. Check out docs.md for how to interact with the library and feel free to leave any comments on producthunt!
