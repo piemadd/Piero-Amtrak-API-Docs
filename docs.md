@@ -5,43 +5,7 @@ This markdown file will guide you through the objects and endpoints from the API
 I have no idea what the proper name for these are, but they're like structs. There are three of them, `station`, `stationMin`, and `trainData`. These are all pretty self-explanitory of what each variable holds.
 
 ```ts
-interface station {
-	trainNum: number; //number of the train station is from
-	code: string; //code of station
-	tz: string; //timezone of station (EST, EDT, CST, CDT, PST, or PDT)
-	bus: boolean; //true if bus at stop
-	schArr: Date; //scheduled arrival at station
-	schDep: Date; //scheduled departure from station
-	schMnt: string; //variable from amtrak, not sure use of but could be related to any maintnence the train will go through at this station
-	autoArr: boolean; //has the train arrived at this station already?
-	autoDep: boolean; //has the train departed from this station already?
-	postArr?: Date; //actual arrival at station
-	postDep?: Date; //actual departure from station
-	postCmnt?: string; //how late it departed in english
-	estArr?: Date; //estimated arrival at station
-	estDep?: Date; //estimated departure from station
-	estArrCmnt?: string; //how early/late train will be in english
-	estDepCmnt?: string; //how early/late train will be in english
-}
-```
-
-```ts
-interface stationMin {
-	trainNum: number; //number of the train station is from
-	schArr: Date; //scheduled arrival at station
-	schDep: Date; //scheduled departure from station
-	postArr?: Date; //actual arrival at station
-	postDep?: Date; //actual departure from station
-	postCmnt?: string; //how late it departed in english
-	estArr?: Date; //estimated arrival at station
-	estDep?: Date; //estimated departure from station
-	estArrCmnt?: string; //how early/late train will be in english
-	estDepCmnt?: string; //how early/late train will be in english
-}
-```
-
-```ts
-interface trainData {
+let trainData = {
 	routeName: string; //name of the route
 	trainNum: number; //train number
 	coordinates: number[]; //coordinates in lat, lon
@@ -63,6 +27,42 @@ interface trainData {
 	updatedAt: Date; //the time this data was retrieved from the server
 	stations: station[]; //array of station objects
 };
+```
+
+```ts
+let station = {
+	trainNum: number; //number of the train station is from
+	code: string; //code of station
+	tz: string; //timezone of station (EST, EDT, CST, CDT, PST, or PDT)
+	bus: boolean; //true if bus at stop
+	schArr: Date; //scheduled arrival at station
+	schDep: Date; //scheduled departure from station
+	schMnt: string; //variable from amtrak, not sure use of but could be related to any maintnence the train will go through at this station
+	autoArr: boolean; //has the train arrived at this station already?
+	autoDep: boolean; //has the train departed from this station already?
+	postArr?: Date; //actual arrival at station
+	postDep?: Date; //actual departure from station
+	postCmnt?: string; //how late it departed in english
+	estArr?: Date; //estimated arrival at station
+	estDep?: Date; //estimated departure from station
+	estArrCmnt?: string; //how early/late train will be in english
+	estDepCmnt?: string; //how early/late train will be in english
+}
+```
+
+```ts
+let stationMin = {
+	trainNum: number; //number of the train station is from
+	schArr: Date; //scheduled arrival at station
+	schDep: Date; //scheduled departure from station
+	postArr?: Date; //actual arrival at station
+	postDep?: Date; //actual departure from station
+	postCmnt?: string; //how late it departed in english
+	estArr?: Date; //estimated arrival at station
+	estDep?: Date; //estimated departure from station
+	estArrCmnt?: string; //how early/late train will be in english
+	estDepCmnt?: string; //how early/late train will be in english
+}
 ```
 
 ## Endpoints
