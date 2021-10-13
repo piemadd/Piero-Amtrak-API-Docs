@@ -67,14 +67,14 @@ let stationMin = {
 ```
 
 ## Endpoints
-There are 6 endpoints on this API, each making your life tracking Amtrak trains programmatically easier. The endpoint to use for these it https://api.amtrak.piemadd.com/v1, which can be used in your application or even add Amtrak API support to other libraries. Everything is returned as JSON.
+There are 6 endpoints on this API, each making your life tracking Amtrak trains programmatically easier. The endpoint to use for these it https://api.amtrak.cc/v1, which can be used in your application or even add Amtrak API support to other libraries. Everything is returned as JSON.
 
-[`/trains/keys`](https://api.amtrak.piemadd.com/v1/trains/keys) - Returns a key-value dictionary of train numbers and their corresponding name.
+[`/trains/keys`](https://api.amtrak.cc/v1/trains/keys) - Returns a key-value dictionary of train numbers and their corresponding name.
 
-[`/trains/{trainNum}`](https://api.amtrak.piemadd.com/v1/trains/{trainNum}) - Returns an array of `trainData` objects with every object being from a train posessing the given train number (trainNum).
+[`/trains/{trainNum}`](https://api.amtrak.cc/v1/trains/{trainNum}) - Returns an array of `trainData` objects with every object being from a train posessing the given train number (trainNum).
 
-[`/trains`](https://api.amtrak.piemadd.com/v1/trains) - Returns object where the keys are the number to an Amtrak train and the values are what `fetchTrain()` would return, being an array of `trainData` objects.
+[`/trains`](https://api.amtrak.cc/v1/trains) - Returns object where the keys are the number to an Amtrak train and the values are what `fetchTrain()` would return, being an array of `trainData` objects.
 
-[`/stations/{stationCode}`](https://api.amtrak.piemadd.com/v1/stations) - Returns a list of `stationMin` objects correlating to the station code passed, with each object being related to a train arriving within the next few hours or having left a few hours back. 
+[`/stations/{stationCode}`](https://api.amtrak.cc/v1/stations) - Returns a list of `stationMin` objects correlating to the station code passed, with each object being related to a train arriving within the next few hours or having left a few hours back. 
 
-[`/stations`](https://api.amtrak.piemadd.com/v1/trains/{stationCode}) - Returns an object where the keys are station codes and the objects being what `fetchStation()` would return.
+[`/stations`](https://api.amtrak.cc/v1/trains/{stationCode}) - Returns an object where the keys are station codes and the objects being what `fetchStation()` would return.
