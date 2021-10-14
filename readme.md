@@ -9,6 +9,7 @@ I have no idea what the proper name for these are, but they're like structs. The
 let trainData = {
 	routeName: string; //name of the route
 	trainNum: number; //train number
+	objectID: numner; //a unique identifier for this train.
 	coordinates: number[]; //coordinates in lat, lon
 	lat: number; //current latitude position of train
 	lon: number; //current longitude position of train
