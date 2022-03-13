@@ -68,21 +68,21 @@ let stationMin = {
 ```
 
 ## Endpoints
-There are 6 endpoints on this API, each making your life tracking Amtrak trains programmatically easier. The endpoint to use for these it https://api.amtrak.cc, which can be used in your application or even add Amtrak API support to other libraries. Everything is returned as JSON.
+There are 6 endpoints on this API, each making your life tracking Amtrak trains programmatically easier. The endpoint to use for these it https://api.amtraker.com, which can be used in your application or even add Amtrak API support to other libraries. Everything is returned as JSON.
 
-[`/v1/trains/keys`](https://api.amtrak.cc/v1/trains/keys) - Returns a key-value dictionary of train numbers and their corresponding name.
+[`/v1/trains/keys`](https://api.amtraker.com/v1/trains/keys) - Returns a key-value dictionary of train numbers and their corresponding name.
 
-[`/v1/trains/{trainNum}`](https://api.amtrak.cc/v1/trains/{trainNum}) - Returns an array of `trainData` objects with every object being from a train posessing the given train number (trainNum).
+[`/v1/trains/{trainNum}`](https://api.amtraker.com/v1/trains/{trainNum}) - Returns an array of `trainData` objects with every object being from a train posessing the given train number (trainNum).
 
-[`/v1/trains`](https://api.amtrak.cc/v1/trains) - Returns object where the keys are the number to an Amtrak train and the values are what `fetchTrain()` would return, being an array of `trainData` objects.
+[`/v1/trains`](https://api.amtraker.comv1/trains) - Returns object where the keys are the number to an Amtrak train and the values are what `fetchTrain()` would return, being an array of `trainData` objects.
 
-[`/v1/stations/keys`](https://api.amtrak.cc/v1/trains/keys) - Returns a key-value dictionary of station codes and their corresponding name.
+[`/v1/stations/keys`](https://api.amtraker.com/v1/trains/keys) - Returns a key-value dictionary of station codes and their corresponding name.
 
-[`/v1/stations/{stationCode}`](https://api.amtrak.cc/v1/stations) - Returns a list of `stationMin` objects correlating to the station code passed, with each object being related to a train arriving within the next few hours or having left a few hours back. 
+[`/v1/stations/{stationCode}`](https://api.amtraker.com/v1/stations) - Returns a list of `stationMin` objects correlating to the station code passed, with each object being related to a train arriving within the next few hours or having left a few hours back. 
 
-[`/v1/stations`](https://api.amtrak.cc/v1/trains/{stationCode}) - Returns an object where the keys are station codes and the objects being what `fetchStation()` would return.
+[`/v1/stations`](https://api.amtraker.com/v1/trains/{stationCode}) - Returns an object where the keys are station codes and the objects being what `fetchStation()` would return.
 
-[`/v2/oembed?url={amtrakerUrl}`](https://api.amtrak.cc/v2/oembed?url={amtrakerUrl}) - Returns oembed data based on the `amtrakerUrl` provided. A valid Amtraker URL is one which looks something like this `https://amtraker.com/view.html?train=123456`. The number which `train` is equal to is the objectID of a train. To test your code, feel free to use the above `/v1/trains` endpoint to get a list of all trains, in which you will find plenty of valid objectIDs. 
+[`/v2/oembed?url={amtrakerUrl}`](https://api.amtraker.com/v2/oembed?url={amtrakerUrl}) - Returns oembed data based on the `amtrakerUrl` provided. A valid Amtraker URL is one which looks something like this `https://amtraker.com/view.html?train=123456`. The number which `train` is equal to is the objectID of a train. To test your code, feel free to use the above `/v1/trains` endpoint to get a list of all trains, in which you will find plenty of valid objectIDs. 
 
 There are a list of valid domains, which include:
 - https://amtraker.com
@@ -98,6 +98,6 @@ There are a list of valid domains, which include:
 The default response is in the JSON oEmbed format, though if you add `xml=true` onto your request, you will receive an xml response. 
 
 Here is a list of example oEmbed requests:
-- https://api.amtrak.cc/v2/oembed?url=https://amtraker.com/view.html?train=23085
-- https://api.amtrak.cc/v2/oembed?url=https://whereismytain.usview.html?train=23085&xml=true
+- https://api.amtraker.com/v2/oembed?url=https://amtraker.com/view.html?train=23085
+- https://api.amtraker.com/v2/oembed?url=https://whereismytain.usview.html?train=23085&xml=true
 
