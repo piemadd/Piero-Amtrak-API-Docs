@@ -76,11 +76,11 @@ There are 6 endpoints on this API, each making your life tracking Amtrak trains 
 
 [`/v1/trains`](https://api.amtraker.comv1/trains) - Returns object where the keys are the number to an Amtrak train and the values are what `fetchTrain()` would return, being an array of `trainData` objects.
 
-[`/v1/stations/keys`](https://api.amtraker.com/v1/trains/keys) - Returns a key-value dictionary of station codes and their corresponding name.
+[`/v1/stations/keys`](https://api.amtraker.com/v1/stations/keys) - Returns a key-value dictionary of station codes and their corresponding name.
 
-[`/v1/stations/{stationCode}`](https://api.amtraker.com/v1/stations) - Returns a list of `stationMin` objects correlating to the station code passed, with each object being related to a train arriving within the next few hours or having left a few hours back. 
+[`/v1/stations/{stationCode}`](https://api.amtraker.com/v1/stations/{stationCode}) - Returns a list of `stationMin` objects correlating to the station code passed, with each object being related to a train arriving within the next few hours or having left a few hours back. 
 
-[`/v1/stations`](https://api.amtraker.com/v1/trains/{stationCode}) - Returns an object where the keys are station codes and the objects being what `fetchStation()` would return.
+[`/v1/stations`](https://api.amtraker.com/v1/stations/) - Returns an object where the keys are station codes and the objects being what `fetchStation()` would return.
 
 [`/v2/oembed?url={amtrakerUrl}`](https://api.amtraker.com/v2/oembed?url={amtrakerUrl}) - Returns oembed data based on the `amtrakerUrl` provided. A valid Amtraker URL is one which looks something like this `https://amtraker.com/view.html?train=123456`. The number which `train` is equal to is the objectID of a train. To test your code, feel free to use the above `/v1/trains` endpoint to get a list of all trains, in which you will find plenty of valid objectIDs. 
 
