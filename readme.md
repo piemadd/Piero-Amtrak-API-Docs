@@ -3,6 +3,7 @@
 This API makes it super easy to programmatically interact with Amtrak's train tracking libray from any language supporting CURL requests and JSON. The library is written in Javascript using Express.js and [Amtrak.js](https://npmjs.com/package/amtrak), the latter of which is my own library. This markdown file will guide you through the objects and endpoints from the API you can call/interact with.
 
 ## Objects
+
 I have no idea what the proper name for these are, but they're like structs. There are three of them, `station`, `stationMin`, and `trainData`. These are all pretty self-explanitory of what each variable holds.
 
 ```ts
@@ -68,6 +69,7 @@ let stationMin = {
 ```
 
 ## Endpoints
+
 There are 6 endpoints on this API, each making your life tracking Amtrak trains programmatically easier. The endpoint to use for these it https://api.amtraker.com, which can be used in your application or even add Amtrak API support to other libraries. Everything is returned as JSON.
 
 [`/v1/trains/keys`](https://api.amtraker.com/v1/trains/keys) - Returns a key-value dictionary of train numbers and their corresponding name.
@@ -82,9 +84,10 @@ There are 6 endpoints on this API, each making your life tracking Amtrak trains 
 
 [`/v1/stations`](https://api.amtraker.com/v1/stations/) - Returns an object where the keys are station codes and the objects being what `fetchStation()` would return.
 
-[`/v2/oembed?url={amtrakerUrl}`](https://api.amtraker.com/v2/oembed?url={amtrakerUrl}) - Returns oembed data based on the `amtrakerUrl` provided. A valid Amtraker URL is one which looks something like this `https://amtraker.com/view.html?train=123456`. The number which `train` is equal to is the objectID of a train. To test your code, feel free to use the above `/v1/trains` endpoint to get a list of all trains, in which you will find plenty of valid objectIDs. 
+[`/v2/oembed?url={amtrakerUrl}`](https://api.amtraker.com/v2/oembed?url={amtrakerUrl}) - Returns oembed data based on the `amtrakerUrl` provided. A valid Amtraker URL is one which looks something like this `https://amtraker.com/view.html?train=123456`. The number which `train` is equal to is the objectID of a train. To test your code, feel free to use the above `/v1/trains` endpoint to get a list of all trains, in which you will find plenty of valid objectIDs.
 
 There are a list of valid domains, which include:
+
 - https://amtraker.com
 - https://www.amtraker.com
 - https://amtrak.cc
@@ -95,9 +98,9 @@ There are a list of valid domains, which include:
 - https://whereismyfuckingtrain.com
 - https://www.whereismyfuckingtrain.com
 
-The default response is in the JSON oEmbed format, though if you add `xml=true` onto your request, you will receive an xml response. 
+The default response is in the JSON oEmbed format, though if you add `xml=true` onto your request, you will receive an xml response.
 
 Here is a list of example oEmbed requests:
+
 - https://api.amtraker.com/v2/oembed?url=https://amtraker.com/view.html?train=23085
 - https://api.amtraker.com/v2/oembed?url=https://whereismytain.usview.html?train=23085&xml=true
-
