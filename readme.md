@@ -84,7 +84,14 @@ There are 6 endpoints on this API, each making your life tracking Amtrak trains 
 
 [`/v1/stations`](https://api.amtraker.com/v1/stations/) - Returns an object where the keys are station codes and the objects being what `fetchStation()` would return.
 
-[`/v2/timeSinceLastUpdate`](https://api.amtraker.com/v2/timeSinceLastUpdate) - Returns ms since the Amtrak API was last updated. 
+[`/v2/dataFeedState`](https://api.amtraker.com/v2/dataFeedState) - Returns the state as the following object:
+
+```js
+{
+  timeSinceLastUpdate: 0, // ms since the last time the Amtrak API was updated
+  isStale: false // if timeSinceLastUpdate > 2 hours (7200000 ms)
+}
+``` 
 
 [`/v2/oembed?url={amtrakerUrl}`](https://api.amtraker.com/v2/oembed?url={amtrakerUrl}) - Returns oembed data based on the `amtrakerUrl` provided. A valid Amtraker URL is one which looks something like this `https://amtraker.com/view.html?train=123456`. The number which `train` is equal to is the objectID of a train. To test your code, feel free to use the above `/v1/trains` endpoint to get a list of all trains, in which you will find plenty of valid objectIDs.
 
