@@ -38,11 +38,11 @@ let station = {
 	code: string; //code of station
 	tz: string; //timezone of station (EST, EDT, CST, CDT, PST, or PDT)
 	bus: boolean; //true if bus at stop
-	schArr: Date; //scheduled arrival at station
+	schArr?: Date; //scheduled arrival at station
 	schDep: Date; //scheduled departure from station
 	schMnt: string; //variable from amtrak, not sure use of but could be related to any maintnence the train will go through at this station
-	autoArr: boolean; //has the train arrived at this station already?
-	autoDep: boolean; //has the train departed from this station already?
+	autoArr: boolean; // true if the train has not arrived at the station yet
+	autoDep: boolean; // true if the train has not departed from the station yet
 	postArr?: Date; //actual arrival at station
 	postDep?: Date; //actual departure from station
 	postCmnt?: string; //how late it departed in english
